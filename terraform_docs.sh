@@ -82,7 +82,6 @@ terraform_docs_() {
   else # Using terraform 0.11 and no awk script is needed for that
 
     terraform_docs "0" "$args" "${files[@]}"
-
   fi
 }
 
@@ -310,4 +309,7 @@ EOF
 declare -a ARGS=()
 declare -a FILES=()
 
+echo $@
+echo
 [[ ${BASH_SOURCE[0]} != "$0" ]] || main "$@"
+echo $?
